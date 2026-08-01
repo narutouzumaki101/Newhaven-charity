@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Donate | Hope Haven Foundation</title>
+        <link rel="icon"
+            href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%232563eb'/><text x='50' y='60' font-size='60' font-family='Arial' font-weight='bold' text-anchor='middle' fill='white'>H</text></svg>" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body class="bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 text-white min-h-screen">
+        <main class="min-h-screen flex items-center justify-center px-4 py-16">
+            <section class="relative w-full max-w-5xl">
+                <div class="absolute -top-16 left-0 w-40 h-40 rounded-full bg-blue-700/20 blur-3xl"></div>
+                <div class="absolute -right-16 top-24 w-56 h-56 rounded-full bg-sky-500/10 blur-3xl"></div>
+                <div class="relative grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+                    <div
+                        class="rounded-[32px] border border-white/10 bg-white/5 p-8 shadow-2xl backdrop-blur-xl ring-1 ring-white/10">
+                        <div class="flex items-center gap-4 mb-8">
+                            <div
+                                class="flex h-14 w-14 items-center justify-center rounded-3xl bg-gradient-to-br from-blue-500 to-sky-400 text-2xl shadow-lg">
+                                <i class="fas fa-hand-holding-heart text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm uppercase tracking-[0.35em] text-sky-200">Hope Haven</p>
+                                <h1 class="text-4xl font-bold text-white mt-2">Donate with impact.</h1>
+                            </div>
+                        </div>
+
+                        <p class="mb-8 text-slate-300 leading-relaxed">Your contribution supports our work providing
+                            meals, supplies, and safe spaces for homeless individuals, children, and families in need.
+                        </p>
+
+                        <div class="grid gap-4">
+                            <div class="rounded-3xl border border-slate-700/80 bg-slate-900/80 p-5">
+                                <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Trusted support</p>
+                                <p class="mt-2 text-white font-semibold">Secure contribution experience.</p>
+                            </div>
+                            <div class="rounded-3xl border border-slate-700/80 bg-slate-900/80 p-5">
+                                <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Flexible giving</p>
+                                <p class="mt-2 text-white font-semibold">Choose how your gift helps our mission.</p>
+                            </div>
+                            <div class="rounded-3xl border border-slate-700/80 bg-slate-900/80 p-5">
+                                <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Community first</p>
+                                <p class="mt-2 text-white font-semibold">Every donation supports real local impact.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="rounded-[32px] border border-white/10 bg-slate-900/90 p-8 shadow-2xl backdrop-blur-xl ring-1 ring-white/10">
+                        <div class="flex items-center justify-between mb-8">
+                            <div>
+                                <p class="text-sm text-sky-200 uppercase tracking-[0.35em]">Support Our Mission</p>
+                                <h2 class="mt-3 text-3xl font-bold text-white">Donation Form</h2>
+                            </div>
+                            <span class="rounded-3xl bg-blue-600/10 px-4 py-2 text-sm font-semibold text-blue-200">Safe
+                                & easy</span>
+                        </div>
+
+                        <form class="space-y-5">
+                            <div class="grid gap-6 md:grid-cols-2">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-300 mb-2" for="name">Full
+                                        Name</label>
+                                    <input id="name" type="text" placeholder="John Doe"
+                                        class="w-full rounded-3xl border border-slate-700 bg-slate-950/90 px-4 py-3 text-white shadow-sm transition focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30" />
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-300 mb-2" for="email">Email
+                                        Address</label>
+                                    <input id="email" type="email" placeholder="you@example.com"
+                                        class="w-full rounded-3xl border border-slate-700 bg-slate-950/90 px-4 py-3 text-white shadow-sm transition focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30" />
+                                </div>
+                            </div>
+
+                            <div class="grid gap-6 md:grid-cols-2">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-300 mb-2" for="amount">Donation
+                                        Amount</label>
+                                    <input id="amount" type="number" min="1" placeholder="50"
+                                        class="w-full rounded-3xl border border-slate-700 bg-slate-950/90 px-4 py-3 text-white shadow-sm transition focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30" />
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-300 mb-2" for="cause">Support
+                                        Area</label>
+                                    <select id="cause"
+                                        class="w-full rounded-3xl border border-slate-700 bg-slate-950/90 px-4 py-3 text-white shadow-sm transition focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30">
+                                        <option>Food Assistance</option>
+                                        <option>Clothing & Supplies</option>
+                                        <option>Children & Youth Support</option>
+                                        <option>General Mission</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-slate-300 mb-2"
+                                    for="message">Message</label>
+                                <textarea id="message" rows="5"
+                                    placeholder="Share a note of encouragement or dedication"
+                                    class="w-full rounded-3xl border border-slate-700 bg-slate-950/90 px-4 py-3 text-white shadow-sm transition focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30"></textarea>
+                            </div>
+
+                            <div class="rounded-3xl border border-slate-700 bg-slate-950/70 p-5">
+                                <p class="text-sm font-semibold text-white mb-4">Choose payment method</p>
+                                <div class="grid gap-3 sm:grid-cols-2">
+                                    <label
+                                        class="flex items-center gap-3 rounded-3xl border border-slate-700 bg-slate-950/90 px-4 py-3 transition hover:border-blue-500">
+                                        <input type="radio" name="payment_method" value="PayPal"
+                                            class="h-4 w-4 text-blue-500 focus:ring-blue-400" checked>
+                                        <span class="text-sm text-slate-200">PayPal</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-3 rounded-3xl border border-slate-700 bg-slate-950/90 px-4 py-3 transition hover:border-blue-500">
+                                        <input type="radio" name="payment_method" value="CashApp"
+                                            class="h-4 w-4 text-blue-500 focus:ring-blue-400">
+                                        <span class="text-sm text-slate-200">Cash App</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-3 rounded-3xl border border-slate-700 bg-slate-950/90 px-4 py-3 transition hover:border-blue-500">
+                                        <input type="radio" name="payment_method" value="Chime"
+                                            class="h-4 w-4 text-blue-500 focus:ring-blue-400">
+                                        <span class="text-sm text-slate-200">Chime</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-3 rounded-3xl border border-slate-700 bg-slate-950/90 px-4 py-3 transition hover:border-blue-500">
+                                        <input type="radio" name="payment_method" value="GiftCard"
+                                            class="h-4 w-4 text-blue-500 focus:ring-blue-400">
+                                        <span class="text-sm text-slate-200">Gift Card</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-3 rounded-3xl border border-slate-700 bg-slate-950/90 px-4 py-3 transition hover:border-blue-500">
+                                        <input type="radio" name="payment_method" value="Zelle"
+                                            class="h-4 w-4 text-blue-500 focus:ring-blue-400">
+                                        <span class="text-sm text-slate-200">Zelle</span>
+                                    </label>
+                                </div>
+                                <p class="mt-4 text-sm text-slate-400">After submitting, use the selected service to
+                                    send your donation. Include your name in the payment note so we can match it to your
+                                    request.</p>
+                            </div>
+
+                            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                                <button type="submit"
+                                    class="inline-flex items-center justify-center rounded-3xl bg-gradient-to-r from-blue-500 to-sky-500 px-7 py-3 text-base font-semibold text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-0.5 hover:ring-2 hover:ring-blue-400/30 focus:outline-none focus:ring-2 focus:ring-blue-400/50">
+                                    <i class="fas fa-heart mr-2"></i>Donate Now
+                                </button>
+                                <a href="index.html" class="text-sm text-slate-300 transition hover:text-white">Back to
+                                    Home</a>
+                            </div>
+
+                            <div class="rounded-3xl border border-slate-700 bg-slate-950/70 p-5 text-sm text-slate-400">
+                                <p><span class="font-semibold text-white">Note:</span> This form is designed for
+                                    contribution requests. We will follow up with you shortly after submission.</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+
+</html>
