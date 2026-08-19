@@ -61,8 +61,8 @@
                                 & easy</span>
                         </div>
 
-                        <form id="donation-form" class="space-y-5"
-                            action="https://formsubmit.co/havenfoundationhope@gmail.com" method="POST">
+                        <form id="donation-form" class="space-y-5" action="/api/donate" method="POST"
+                            accept-charset="UTF-8">
                             <div class="grid gap-6 md:grid-cols-2">
                                 <div>
                                     <label class="block text-sm font-medium text-slate-300 mb-2" for="name">Full
@@ -149,6 +149,7 @@
                             <input type="hidden" name="_subject" value="New donation request from Hope Haven website" />
                             <input type="hidden" name="_captcha" value="false" />
                             <input type="hidden" name="_template" value="table" />
+                            <input type="hidden" name="_replyto" value="" />
 
                             <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                                 <button type="submit"
@@ -181,8 +182,63 @@
 
                 if (!form || !formStatus) return;
 
-                form.addEventListener('submit', () => {
+                const fallbackMailto = () => {
+                    const formData = new FormData(form);
+                    const fields = {
+                        name: formData.get('name') || 'Not provided',
+                        email: formData.get('email') || 'Not provided',
+                        amount: formData.get('amount') || 'Not provided',
+                        cause: formData.get('cause') || 'Not provided',
+                        payment_method: formData.get('payment_method') || 'Not provided',
+                        message: formData.get('message') || 'No extra note provided.'
+                    };
+
+                    const subject = encodeURIComponent('Donation request from Hope Haven website');
+                    const body = encodeURIComponent(
+                        'Name: ' + fields.name + '\n' +
+                        'Email: ' + fields.email + '\n' +
+                        'Donation Amount: ' + fields.amount + '\n' +
+                        'Support Area: ' + fields.cause + '\n' +
+                        'Payment Method: ' + fields.payment_method + '\n\n' +
+                        'Message:\n' + fields.message
+                    );
+
+                    formStatus.textContent = 'The form relay was unavailable, so your email app is opening to send the request manually.';
                     formStatus.classList.remove('hidden');
+                    window.location.href = 'mailto:havenfoundationhope@gmail.com?subject=' + subject + '&body=' + body;
+                };
+
+                form.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+                    formStatus.classList.remove('hidden');
+                    formStatus.textContent = 'Sending your donation request now...';
+
+                    const formData = new FormData(form);
+
+                    try {
+                        const response = await fetch(form.action, {
+                            method: 'POST',
+                            body: JSON.stringify(Object.fromEntries(formData.entries())),
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Accept': 'application/json'
+                            }
+                        });
+
+                        const result = await response.json();
+
+                        if (response.ok && result.success) {
+                            form.reset();
+                            formStatus.textContent = 'Your donation request has been sent successfully.';
+                            window.location.href = 'thanks.html';
+                            return;
+                        }
+
+                        throw new Error(result.message || 'Form submission failed');
+                    } catch (error) {
+                        formStatus.textContent = error.message || 'The form could not be sent right now. Please try again or email us directly.';
+                        formStatus.classList.remove('hidden');
+                    }
                 });
             });
         </script>
