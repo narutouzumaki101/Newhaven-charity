@@ -1,0 +1,8 @@
+[build]
+  publish = "."
+  functions = "api"
+
+[[redirects]]
+  from = "/api/donate"
+  to = "/.netlify/functions/donate"
+  status = 200
