@@ -5,7 +5,8 @@
     "main": "server.js",
     "scripts": {
         "start": "node server.js",
-        "dev": "node server.js"
+        "dev": "node server.js",
+        "vercel-build": "node -e \"console.log('Vercel build complete')\""
     },
     "keywords": [
         "charity",

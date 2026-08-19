@@ -1,0 +1,21 @@
+{
+    "version": 2,
+    "routes": [
+        {
+            "src": "/api/donate",
+            "dest": "/api/donate.js"
+        },
+        {
+            "src": "/donate",
+            "dest": "/donate.html"
+        },
+        {
+            "src": "/thanks",
+            "dest": "/thanks.html"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/$1"
+        }
+    ]
+}
